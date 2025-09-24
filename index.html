@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAVAM UNIVERSITY</title>
+    <link rel="stylesheet" href="Inicio.css">
+    <link rel="icon" type="image/jpg" href="imagenvale3.jpg">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="left-icons"></div>
+        <div class="right-icons" id="user-options">
+        </div>
+    </header>
+
+    <nav class="nav">
+        <a href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>
+    </nav>
+
+    <section class="hero">
+        <img src="imagenvale2.1.jpg" alt="Hospital Background">
+        <div class="content">
+            <h1>NAVAM UNIVERSITY</h1>
+            <p>Excelencia que guía hacia el futuro.</p>
+            <h2>Ayudamos a nuestros estudiantes a desarrollar su potencial y libertad de pensamiento</h2>
+            <p>NAVAM University nace del compromiso de ofrecer un servicio de educación superior de la más alta calidad. Con la satisfacción de estar formando excelentes profesionistas, se establece la misión de dar continuidad a una enseñanza basada en la excelencia académica, disciplina, extraordinarios maestros e instalaciones de primer nivel.</p>
+            <p>Uniendo esfuerzos con expertos en educación y directivos, se funda NAVAM University con el firme compromiso de seguir contribuyendo a la formación de nuestros estudiantes, desarrollando sus competencias intelectuales y emocionales para los retos del futuro.</p>
+            <button id="leer-mas-btn">Leer Más</button>
+        </div>
+    </section>
+
+    <section id="informacion-adicional" class="hidden">
+        <div class="info-container">
+            <div class="info-column">
+                <h3>El Significado de NAVAM</h3>
+                <p>N – Nobleza
+                    Refleja la honestidad, rectitud y transparencia en las acciones académicas y personales.</p>
+                    
+                <p>A – Apertura
+                    Promueve la apertura cultural y lingüística, fomentando el respeto y la convivencia en un entorno bilingüe y multicultural.</p>
+                    
+                <p>V – Valor
+                    Hace referencia al coraje de enfrentar retos académicos, profesionales y personales con resiliencia.</p>
+                    
+                <p>A – Aprendizaje
+                    Enfatiza el compromiso con la educación continua y el desarrollo integral en dos idiomas.</p>
+                    
+                <p>M – Multiculturalidad
+                    Resalta la riqueza de la diversidad cultural y lingüística que caracteriza a la universidad.</p>
+            </div>
+    
+            <div class="info-column">
+                <h3>Nuestros Valores</h3>
+                <ul>
+                    <li><strong>Excelencia:</strong> Compromiso con la más alta calidad académica y profesional.</li>
+                    <li><strong>Innovación:</strong> Fomento de la creatividad y el pensamiento vanguardista.</li>
+                    <li><strong>Integridad:</strong> Actuar con ética, honestidad y transparencia en todo momento.</li>
+                    <li><strong>Liderazgo:</strong> Formar agentes de cambio que inspiren y guíen a la sociedad.</li>
+                    <li><strong>Compromiso Social:</strong> Contribuir activamente al bienestar y desarrollo de nuestra comunidad.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const userEmail = localStorage.getItem("loggedUser");
+            const userOptions = document.getElementById("user-options");
+            const loginButton = document.getElementById("login-button");
+            const leerMasBtn = document.getElementById("leer-mas-btn");
+            const informacionAdicional = document.getElementById("informacion-adicional");
+
+            if (userEmail) {
+                userOptions.innerHTML = `
+                    <span>Bienvenido</span>
+                    <button onclick="cerrarSesion()" class="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                `;
+            } else {
+                userOptions.innerHTML = `
+                    <a href="login.html" class="user-btn">
+                        <i class="fas fa-user"></i>
+                    </a>
+                `;
+            }
+
+            leerMasBtn.addEventListener("click", function() {
+                informacionAdicional.classList.remove("hidden");
+                informacionAdicional.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        function cerrarSesion() {
+            localStorage.removeItem("loggedUser");
+            alert("Sesión cerrada.");
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    background-color: #f5f5f5;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .left-icons img {
+    height: 20px;
+    margin-right: 10px;
+}
+
+.header .right-icons i {
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.nav {
+    background-color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px 20px;
+    background-color: white;
+}
+
+.search-bar input {
+    padding: 5px 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+.search-bar i {
+    font-size: 20px;
+}
+
+.hero {
+    position: relative;
+    text-align: left;
+    color: rgb(255, 255, 255);
+    overflow: hidden; /* para que el overlay no se salga */
+}
+
+/* Overlay oscuro para mejorar contraste sobre la imagen */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero .content {
+    position: absolute;
+    top: 30%;
+    left: 20px;
+    transform: translateY(-30%);
+    z-index: 1;
+    max-width: 600px; /* limita ancho para mejor lectura */
+}
+
+.hero .content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.hero .content p {
+    font-size: 18px;
+    margin: 10px 0;
+    background-color: rgba(0, 0, 0, 0.5); /* fondo semi-transparente */
+    padding: 12px 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+    line-height: 1.5;
+}
+
+.hero .content button {
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+}
+
+.hero .content button:hover {
+    background-color: #ddd;
+}
+
+.carousel-controls {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-controls i {
+    font-size: 24px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .hero .content {
+        max-width: 90vw;
+        left: 50%;
+        transform: translate(-50%, -30%);
+        top: 35%;
+    }
+    .hero .content h1 {
+        font-size: 32px;
+    }
+    .hero .content p {
+        font-size: 16px;
+    }
+}
+
+/* --- ESTILOS AÑADIDOS --- */
+#informacion-adicional {
+    padding: 40px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.info-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.info-content h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.info-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.hidden {
+    display: none;
+}
+
+/* --- NUEVOS ESTILOS PARA LA SECCIÓN DE INFORMACIÓN --- */
+#informacion-adicional {
+    padding: 60px 20px;
+    background-color: #f8f9fa; /* Un gris muy claro para diferenciar la sección */
+}
+
+.info-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px; /* Espacio entre las columnas */
+}
+
+.info-column {
+    flex: 1; /* Permite que ambas columnas ocupen el mismo espacio */
+    text-align: left;
+}
+
+.info-column h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #000; /* Línea decorativa debajo del título */
+    padding-bottom: 10px;
+}
+
+.info-column p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333;
+}
+
+.info-column ul {
+    list-style: none; /* Quita los puntos de la lista */
+    padding: 0;
+}
+
+.info-column ul li {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 15px; /* Espacio entre cada valor */
+    color: #333;
+}
+
+/* --- ESTILOS PARA CELULARES (DISEÑO RESPONSIVO) --- */
+@media (max-width: 768px) {
+    .info-container {
+        flex-direction: column; /* Pone las columnas una encima de la otra */
+    }
+}
